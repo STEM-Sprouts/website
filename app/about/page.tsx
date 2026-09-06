@@ -51,7 +51,7 @@ const ambassadorLeads = [
     photo: "/team/tanishi-srivastava.jpeg",
     name: "Tanishi Srivastava",
     role: "Head of Marketing",
-    note: "Fun Fact: My favorite movie is 27 Dresses.",
+    note: "Fun fact: my favorite movie is 27 Dresses.",
   },
 ]
 
@@ -60,25 +60,19 @@ const ambassadors = [
     photo: "/team/nikhil-kolisetty.jpeg",
     name: "Nikhil Kolisetty",
     role: "Social Media Ambassador",
-    note: "Fun Fact: I like to play FC26 in my free time.",
-  },
-  {
-    photo: "/team/nikhil-kumar.jpeg",
-    name: "Nikhil Kumar",
-    role: "Social Media Ambassador",
-    note: "Fun Fact: My favorite color is Navy Blue.",
+    note: "Fun fact: I like to play FC26 in my free time.",
   },
   {
     photo: "/team/raaga-maddala.jpeg",
     name: "Raaga Maddala",
     role: "Social Media Ambassador",
-    note: "Fun Fact: My favorite artist is SZA.",
+    note: "Fun fact: my favorite artist is SZA.",
   },
   {
     photo: "/team/aanya-bhardwaj.jpeg",
     name: "Aanya Bhardwaj",
     role: "Social Media Ambassador",
-    note: "Fun Fact: My favorite artist is Ariana Grande.",
+    note: "Fun fact: my favorite artist is Ariana Grande.",
   },
 ]
 
