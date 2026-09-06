@@ -3,16 +3,10 @@ import type { Metadata } from "next"
 
 import "./globals.css"
 
-import { Onest, Geist_Mono as V0_Font_Geist_Mono } from "next/font/google"
+import { Onest } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { baseMetadata, jsonLdScript, organizationJsonLd, websiteJsonLd } from "@/lib/seo"
-
-// Initialize fonts
-const geistMono = V0_Font_Geist_Mono({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-})
 
 // Initialize Onest font with weights 500 and 700
 const onest = Onest({
@@ -30,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.variable} ${geistMono.className} font-sans antialiased overflow-x-hidden`}>
+      <body className={`${onest.variable} font-sans antialiased overflow-x-hidden`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
