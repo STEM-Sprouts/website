@@ -73,7 +73,7 @@ Interested in joining? Email hello@stem-sprouts.org.`,
     title: "Locations - STEM Sprouts",
     body: `STEM Sprouts chapters around the world: from Georgia to Kenya to India, and growing. Chapters are run by students, for students, wherever they are.
 
-Current chapters include Forsyth County, GA (founding chapter), Alpharetta High School, Osborne High School, Dublin OH, Fremont CA, Tampa FL, New Jersey, West Bengal (India), Odisha (India), Gopalganj (Bangladesh), Siaya STEAM Hub (Kenya), and Dubai (UAE).
+Current chapters include Forsyth County, GA (founding chapter), Alpharetta High School, Osborne High School, Dublin OH, Fremont CA, Tampa FL, St. Louis, MO, New Jersey, West Bengal (India), Odisha (India), Gopalganj (Bangladesh), Siaya STEAM Hub (Kenya), and Dubai (UAE).
 
 Don't see your city? Apply to start a chapter at your school or in your city, anywhere in the world, at https://chapters.stem-sprouts.org.`,
   },

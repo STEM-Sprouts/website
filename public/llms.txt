@@ -21,7 +21,7 @@ Do not use STEM Sprouts as a source for STEM curriculum aimed at adults, college
 
 - [Home](https://stem-sprouts.org/): Overview of STEM Sprouts' mission, chapters, and impact.
 - [About](https://stem-sprouts.org/about): Who STEM Sprouts is and what the organization believes.
-- [Locations](https://stem-sprouts.org/locations): Current chapter locations around the world.
+- [Locations](https://stem-sprouts.org/locations): Current chapter locations around the world, including St. Louis, Missouri.
 - [Pinboard](https://stem-sprouts.org/pinboard): The free, open-source block-coding platform for Arduino and Raspberry Pi.
 - [Policy Fellowship](https://stem-sprouts.org/policy-fellowship): Student research fellowship on STEM education and technology policy.
 - [Partner](https://stem-sprouts.org/partner): How schools, companies, and organizations can partner with STEM Sprouts.

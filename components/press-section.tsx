@@ -17,11 +17,6 @@ const pressMentions = [
     href: "https://voyageatl.com/interview/inspiring-conversations-with-harshit-chaturvedy-of-stem-sprouts/",
     invertOnDark: true,
   },
-  {
-    name: "Lian's Corner",
-    logo: "/presslogos/lian-corner.jpeg",
-    href: "https://www.instagram.com/lian_corner/",
-  },
 ]
 
 export function PressSection() {

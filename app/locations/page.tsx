@@ -21,6 +21,7 @@ const chapters: (MapChapter & { flag: string; badge?: string })[] = [
   { name: "Dublin", region: "Ohio, USA", flag: "🇺🇸", coordinates: [-83.1141, 40.0992] },
   { name: "Fremont", region: "California, USA", flag: "🇺🇸", coordinates: [-121.9886, 37.5485] },
   { name: "Tampa", region: "Florida, USA", flag: "🇺🇸", coordinates: [-82.4572, 27.9506] },
+  { name: "St. Louis", region: "Missouri, USA", flag: "🇺🇸", coordinates: [-90.1994, 38.627] },
   { name: "New Jersey", region: "USA", flag: "🇺🇸", coordinates: [-74.4057, 40.0583] },
   { name: "West Bengal", region: "India", flag: "🇮🇳", coordinates: [88.3639, 22.5726] },
   { name: "Odisha", region: "India", flag: "🇮🇳", coordinates: [85.8245, 20.2961] },

@@ -56,7 +56,7 @@ export const baseMetadata: Metadata = {
 
 export const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "NGO",
+  "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
@@ -64,6 +64,20 @@ export const organizationJsonLd = {
   image: `${SITE_URL}${DEFAULT_OG_IMAGE.url}`,
   description: SITE_DESCRIPTION,
   email: "hello@stem-sprouts.org",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "General inquiries",
+    email: "hello@stem-sprouts.org",
+  },
+  address: {
+    "@type": "PostalAddress",
+    name: "Fiscal sponsor mailing address",
+    streetAddress: "8605 Santa Monica Boulevard #86294",
+    addressLocality: "West Hollywood",
+    addressRegion: "CA",
+    postalCode: "90069",
+    addressCountry: "US",
+  },
   areaServed: "Worldwide",
   knowsAbout: ["STEM education", "Arduino", "Raspberry Pi", "coding education", "youth leadership"],
   sameAs: SITE_SOCIAL_PROFILES,
