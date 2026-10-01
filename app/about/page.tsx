@@ -21,7 +21,7 @@ const team = [
   },
   {
     initials: "LY",
-    photo: "/team/lokesh-yarlagadda.JPG",
+    photo: "/team/lokesh-yarlagadda.png",
     name: "Lokesh Yarlagadda",
     role: "Vice-President of Operations",
     bio: "Manages day-to-day operations and supports the digital experience for visitors and chapters.",
