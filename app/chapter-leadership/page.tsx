@@ -83,7 +83,7 @@ const provided = [
 
 function ContentCard({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-white dark:bg-black border-[3px] border-black dark:border-white rounded-[24px] p-6 md:p-8">
+    <div className="h-full bg-white dark:bg-black border-[3px] border-black dark:border-white rounded-[24px] p-6 md:p-8">
       {children}
     </div>
   )
@@ -114,7 +114,7 @@ export default function ChapterLeadershipPage() {
 
       <div className="container mx-auto px-4 pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto space-y-16 md:space-y-20">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 -mt-10 md:-mt-14">
             <a href={CHAPTER_APPLICATION_URL} target="_blank" rel="noopener noreferrer">
               <Button className="bg-[#22C55E] text-black hover:bg-[#1ea750] rounded-xl px-8 py-6 text-base font-bold h-auto border-2 border-black">
                 <Rocket className="w-5 h-5" aria-hidden="true" />
@@ -160,7 +160,7 @@ export default function ChapterLeadershipPage() {
             </p>
             <ul className="grid md:grid-cols-2 gap-5 list-none">
               {responsibilities.map((item) => (
-                <li key={item.title}>
+                <li key={item.title} className="h-full">
                   <ContentCard>
                     <h3 className="text-lg md:text-xl font-bold mb-2 text-black dark:text-white">{item.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
@@ -251,7 +251,7 @@ export default function ChapterLeadershipPage() {
             </h2>
             <ul className="grid md:grid-cols-2 gap-5 list-none">
               {provided.map((item) => (
-                <li key={item.title}>
+                <li key={item.title} className="h-full">
                   <ContentCard>
                     <h3 className="text-lg md:text-xl font-bold mb-2 text-black dark:text-white">{item.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">

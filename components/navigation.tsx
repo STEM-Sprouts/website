@@ -8,7 +8,7 @@ import { useTheme } from "next-themes"
 import { DONATE_URL, NAV_ENTRIES, type NavItem } from "@/lib/nav"
 
 const LINK_CLASS =
-  "inline-flex items-center py-2.5 text-[15px] font-bold leading-[20px] hover:text-[#15803d] dark:hover:text-[#22C55E] transition-colors whitespace-nowrap text-black dark:text-white rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#15803d] dark:focus-visible:outline-[#22C55E]"
+  "inline-flex items-center py-2.5 text-[15px] font-bold leading-[20px] hover:text-[#15803d] dark:hover:text-[#22C55E] hover:underline underline-offset-[10px] decoration-2 decoration-[#22C55E] transition-colors whitespace-nowrap text-black dark:text-white rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#15803d] dark:focus-visible:outline-[#22C55E]"
 
 function NavLink({ item, className, onNavigate }: { item: NavItem; className: string; onNavigate?: () => void }) {
   if (item.external) {
@@ -28,19 +28,34 @@ function NavLink({ item, className, onNavigate }: { item: NavItem; className: st
 }
 
 /**
- * Click-to-toggle disclosure menu (no hover needed). Escape closes it and
- * returns focus to the trigger; clicking or tabbing away closes it too.
+ * Disclosure menu that opens on mouse hover and on click/keyboard, so it never
+ * depends on hover alone. Clicking while it is open from hover pins it open;
+ * Escape closes it and returns focus to the trigger; clicking or tabbing away
+ * closes it too.
  */
 function DesktopDropdown({ label, items }: { label: string; items: NavItem[] }) {
   const [open, setOpen] = useState(false)
+  const [pinned, setPinned] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const menuId = useId()
+
+  const close = () => {
+    setOpen(false)
+    setPinned(false)
+  }
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    closeTimer.current = null
+  }
+
+  useEffect(() => cancelClose, [])
 
   useEffect(() => {
     if (!open) return
     const onPointerDown = (event: PointerEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) setOpen(false)
+      if (!rootRef.current?.contains(event.target as Node)) close()
     }
     document.addEventListener("pointerdown", onPointerDown)
     return () => document.removeEventListener("pointerdown", onPointerDown)
@@ -50,14 +65,24 @@ function DesktopDropdown({ label, items }: { label: string; items: NavItem[] }) 
     <div
       ref={rootRef}
       className="relative"
+      onPointerEnter={(event) => {
+        if (event.pointerType !== "mouse") return
+        cancelClose()
+        setOpen(true)
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType !== "mouse" || pinned) return
+        cancelClose()
+        closeTimer.current = setTimeout(() => setOpen(false), 150)
+      }}
       onKeyDown={(event) => {
         if (event.key === "Escape" && open) {
-          setOpen(false)
+          close()
           buttonRef.current?.focus()
         }
       }}
       onBlur={(event) => {
-        if (!rootRef.current?.contains(event.relatedTarget as Node | null)) setOpen(false)
+        if (!rootRef.current?.contains(event.relatedTarget as Node | null)) close()
       }}
     >
       <button
@@ -65,27 +90,37 @@ function DesktopDropdown({ label, items }: { label: string; items: NavItem[] }) 
         type="button"
         aria-expanded={open}
         aria-controls={menuId}
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => {
+          cancelClose()
+          if (open && !pinned) {
+            setPinned(true)
+          } else {
+            setOpen(!open)
+            setPinned(!open)
+          }
+        }}
         className={`${LINK_CLASS} gap-1`}
       >
         {label}
         <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
       </button>
       {open && (
-        <ul
-          id={menuId}
-          className="absolute left-0 top-full mt-1 min-w-[15rem] z-50 bg-white dark:bg-black border-2 border-black dark:border-white rounded-md py-2 shadow-lg list-none"
-        >
-          {items.map((item) => (
-            <li key={item.label}>
-              <NavLink
-                item={item}
-                onNavigate={() => setOpen(false)}
-                className="flex items-center px-4 py-2.5 text-[15px] font-semibold text-black dark:text-white hover:bg-[#22C55E]/20 focus-visible:bg-[#22C55E]/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#15803d] dark:focus-visible:outline-[#22C55E] transition-colors"
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="absolute left-0 top-full pt-1 z-50">
+          <ul
+            id={menuId}
+            className="min-w-[15rem] bg-white dark:bg-black border-2 border-black dark:border-white rounded-md py-2 shadow-lg list-none"
+          >
+            {items.map((item) => (
+              <li key={item.label}>
+                <NavLink
+                  item={item}
+                  onNavigate={close}
+                  className="flex items-center px-4 py-2.5 text-[15px] font-semibold text-black dark:text-white hover:bg-[#22C55E]/25 hover:text-[#15803d] dark:hover:text-[#22C55E] focus-visible:bg-[#22C55E]/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#15803d] dark:focus-visible:outline-[#22C55E] transition-colors"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   )
