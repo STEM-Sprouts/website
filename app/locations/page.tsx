@@ -66,7 +66,7 @@ export default function LocationsPage() {
                   </div>
                   <div>
                     {chapter.badge && (
-                      <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full mb-2">
+                      <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full mb-2">
                         {chapter.badge}
                       </span>
                     )}

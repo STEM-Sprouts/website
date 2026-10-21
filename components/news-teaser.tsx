@@ -27,7 +27,7 @@ export async function NewsTeaser() {
           </h2>
           <Link
             href="/news"
-            className="flex items-center gap-2 font-semibold text-black dark:text-white hover:gap-3 transition-all text-sm md:text-base"
+            className="flex items-center gap-2 min-h-11 font-semibold text-black dark:text-white hover:gap-3 transition-all text-sm md:text-base"
           >
             View all news
             <ArrowRight className="w-4 h-4" />
@@ -55,7 +55,7 @@ export async function NewsTeaser() {
                   </div>
                 )}
                 {post.category !== "news" && (
-                  <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full mb-2 w-fit">
+                  <span className="inline-block bg-black dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full mb-2 w-fit">
                     {formatCategory(post.category)}
                   </span>
                 )}

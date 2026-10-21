@@ -117,7 +117,7 @@ export default function ProgramsPage() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="inline-flex items-center gap-1 font-bold underline text-[#15803d] dark:text-[#22C55E]"
+                      className="inline-flex items-center gap-1 min-h-11 font-bold underline text-[#15803d] dark:text-[#22C55E]"
                     >
                       {link.label}
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />

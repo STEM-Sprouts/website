@@ -137,7 +137,7 @@ function MobileDropdown({ label, items, onNavigate }: { label: string; items: Na
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen((value) => !value)}
-        className="w-full flex items-center justify-between py-1.5 text-base font-bold text-black dark:text-white"
+        className="w-full min-h-11 flex items-center justify-between text-base font-bold text-black dark:text-white"
       >
         {label}
         <ChevronDown className={`w-5 h-5 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
@@ -149,7 +149,7 @@ function MobileDropdown({ label, items, onNavigate }: { label: string; items: Na
               <NavLink
                 item={item}
                 onNavigate={onNavigate}
-                className="block py-2 text-base font-semibold text-black dark:text-white hover:text-[#15803d] dark:hover:text-[#22C55E] transition-colors"
+                className="flex items-center min-h-11 text-base font-semibold text-black dark:text-white hover:text-[#15803d] dark:hover:text-[#22C55E] transition-colors"
               />
             </li>
           ))}
@@ -168,6 +168,15 @@ export function Navigation() {
 
   const toggleTheme = () => setTheme(resolvedTheme === "dark" ? "light" : "dark")
   const closeMobile = () => setOpen(false)
+
+  useEffect(() => {
+    if (!open) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false)
+    }
+    document.addEventListener("keydown", onKeyDown)
+    return () => document.removeEventListener("keydown", onKeyDown)
+  }, [open])
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-black border-b-2 border-black dark:border-white">
@@ -205,7 +214,7 @@ export function Navigation() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle dark mode"
-            className="flex items-center justify-center w-10 h-10 border-2 border-black dark:border-white rounded-sm text-black dark:text-white"
+            className="flex items-center justify-center w-11 h-11 border-2 border-black dark:border-white rounded-sm text-black dark:text-white"
           >
             {mounted && resolvedTheme === "dark" ? (
               <Sun className="w-5 h-5" aria-hidden="true" />
@@ -219,7 +228,7 @@ export function Navigation() {
             aria-label="Toggle navigation menu"
             aria-expanded={open}
             aria-controls="mobile-navigation"
-            className="xl:hidden flex items-center justify-center w-10 h-10 border-2 border-black dark:border-white rounded-sm text-black dark:text-white"
+            className="xl:hidden flex items-center justify-center w-11 h-11 border-2 border-black dark:border-white rounded-sm text-black dark:text-white"
           >
             {open ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
           </button>
@@ -229,9 +238,9 @@ export function Navigation() {
       {open && (
         <div
           id="mobile-navigation"
-          className="xl:hidden absolute left-0 right-0 top-full bg-white dark:bg-black border-b-2 border-black dark:border-white shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto"
+          className="xl:hidden absolute left-0 right-0 top-full bg-white dark:bg-black border-b-2 border-black dark:border-white shadow-lg max-h-[calc(100vh-4rem)] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain"
         >
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
           {NAV_ENTRIES.map((entry) =>
             "items" in entry ? (
               <MobileDropdown key={entry.label} label={entry.label} items={entry.items} onNavigate={closeMobile} />
@@ -240,7 +249,7 @@ export function Navigation() {
                 key={entry.label}
                 href={entry.href}
                 onClick={closeMobile}
-                className="py-1.5 text-base font-bold text-black dark:text-white hover:text-[#15803d] dark:hover:text-[#22C55E] transition-colors"
+                className="flex items-center min-h-11 text-base font-bold text-black dark:text-white hover:text-[#15803d] dark:hover:text-[#22C55E] transition-colors"
               >
                 {entry.label}
               </Link>
@@ -251,7 +260,7 @@ export function Navigation() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMobile}
-            className="bg-[#22C55E] text-black rounded-sm px-5 py-3 font-bold text-sm border-2 border-black dark:border-white text-center"
+            className="mt-3 bg-[#22C55E] text-black rounded-sm px-5 py-3.5 font-bold text-base border-2 border-black dark:border-white text-center"
           >
             Donate <span aria-hidden="true">&nbsp;↗</span>
             <span className="sr-only"> (opens in a new tab)</span>

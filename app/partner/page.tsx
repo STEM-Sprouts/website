@@ -170,7 +170,7 @@ export default function PartnerPage() {
               tiers.
             </p>
             <a href="/stem/STEM_Sprouts_Partnership_Guide.pdf" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-[#22C55E] text-black hover:bg-[#1ea750] rounded-xl px-8 py-6 text-base font-bold h-auto">
+              <Button className="bg-[#22C55E] text-black hover:bg-[#1ea750] rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base font-bold h-auto whitespace-normal text-center max-w-full">
                 <Download className="w-5 h-5" aria-hidden="true" />
                 Download Partnership Guide (PDF)
               </Button>
@@ -185,7 +185,7 @@ export default function PartnerPage() {
               together.
             </p>
             <Link href="/#contact">
-              <Button className="bg-black text-white hover:bg-black/80 rounded-xl px-8 py-6 text-base font-bold h-auto">
+              <Button className="bg-black text-white hover:bg-black/80 rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base font-bold h-auto whitespace-normal text-center max-w-full">
                 Get in Touch
               </Button>
             </Link>
