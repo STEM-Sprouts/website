@@ -107,7 +107,7 @@ export default async function GuidePage({ params }: Props) {
                 </Button>
               </a>
               {guide.related.map((link) => (
-                <Link key={link.href} href={link.href} className="inline-flex items-center gap-1 font-bold text-black underline">
+                <Link key={link.href} href={link.href} className="inline-flex items-center gap-1 min-h-11 font-bold text-black underline">
                   {link.label}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>

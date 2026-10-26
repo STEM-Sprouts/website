@@ -196,14 +196,14 @@ export default function ChapterLeadershipPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/news/stem-access-inside-the-siaya-chapter"
-                  className="inline-flex items-center gap-2 font-bold text-[#22C55E] underline"
+                  className="inline-flex items-center gap-2 min-h-11 font-bold text-[#22C55E] underline"
                 >
                   Read how the Siaya chapter is run
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/news/stem-sprouts-kenya-launches-the-sister-schools-network"
-                  className="inline-flex items-center gap-2 font-bold text-[#22C55E] underline"
+                  className="inline-flex items-center gap-2 min-h-11 font-bold text-[#22C55E] underline"
                 >
                   Read about the Sister Schools Network
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -260,7 +260,7 @@ export default function ChapterLeadershipPage() {
                     {item.href && item.cta && (
                       <Link
                         href={item.href}
-                        className="inline-flex items-center gap-1 mt-3 font-bold text-sm text-[#15803d] dark:text-[#22C55E] underline"
+                        className="inline-flex items-center gap-1 mt-1 min-h-11 font-bold text-sm text-[#15803d] dark:text-[#22C55E] underline"
                       >
                         {item.cta}
                         <ArrowRight className="w-4 h-4" aria-hidden="true" />

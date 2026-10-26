@@ -19,8 +19,8 @@ export function InstagramEmbed() {
   }, [])
 
   return (
-    <div ref={containerRef} className="flex justify-center">
-      <div dangerouslySetInnerHTML={{ __html: EMBED_HTML }} />
+    <div ref={containerRef} className="flex justify-center w-full max-w-full overflow-hidden">
+      <div className="w-full min-w-0 flex justify-center [&_iframe]:!max-w-full" dangerouslySetInnerHTML={{ __html: EMBED_HTML }} />
       <Script
         src="https://www.instagram.com/embed.js"
         strategy="lazyOnload"

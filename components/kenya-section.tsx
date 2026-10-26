@@ -69,7 +69,7 @@ export function KenyaSection() {
 
             <Link
               href="/locations"
-              className="flex items-center gap-2 font-semibold text-[#0B0B0B] dark:text-white hover:gap-3 transition-all text-sm md:text-base w-fit"
+              className="flex items-center gap-2 min-h-11 font-semibold text-[#0B0B0B] dark:text-white hover:gap-3 transition-all text-sm md:text-base w-fit"
             >
               See our chapters
               <ArrowRight className="w-4 h-4" />

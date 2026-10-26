@@ -42,7 +42,7 @@ export function ExperienceSection() {
                   ) : (
                     <div className="text-2xl md:text-4xl font-bold text-[#0B0B0B] mb-2">{stat.value}</div>
                   )}
-                  <div className="text-[11px] md:text-xs uppercase tracking-wide text-[#393939] font-semibold">
+                  <div className="text-xs uppercase tracking-wide text-[#393939] font-semibold">
                     {stat.label}
                   </div>
                 </PopIn>

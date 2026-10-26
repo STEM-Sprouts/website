@@ -175,7 +175,7 @@ export default function ResourcesPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-[#22C55E] text-black hover:bg-[#1ea750] rounded-xl px-8 py-6 text-base font-bold h-auto">
+              <Button className="bg-[#22C55E] text-black hover:bg-[#1ea750] rounded-xl px-6 sm:px-8 py-4 sm:py-6 text-base font-bold h-auto whitespace-normal text-center max-w-full">
                 Access All Curriculum Materials For FREE ↗
               </Button>
             </a>
@@ -209,7 +209,7 @@ export default function ResourcesPage() {
                 <div className="flex gap-3 flex-wrap">
                   <Link
                     href="/pinboard"
-                    className="inline-flex items-center gap-1 bg-[#22C55E] text-black text-sm font-bold px-4 py-2 rounded-lg hover:bg-[#1ea750] transition-colors"
+                    className="inline-flex items-center gap-1 min-h-11 bg-[#22C55E] text-black text-sm font-bold px-4 py-2 rounded-lg hover:bg-[#1ea750] transition-colors"
                   >
                     Explore Pinboard
                     <ArrowRight className="w-4 h-4" />
@@ -218,7 +218,7 @@ export default function ResourcesPage() {
                     href="https://pinboard.stem-sprouts.org"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 border-2 border-black dark:border-white text-black dark:text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                    className="inline-flex items-center gap-1 min-h-11 border-2 border-black dark:border-white text-black dark:text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
                   >
                     Launch App ↗
                   </a>

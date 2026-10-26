@@ -119,8 +119,20 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
   body {
     @apply bg-background text-foreground;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Long words, URLs and emails wrap instead of widening the page on phones. */
+  h1, h2, h3, h4, p, li {
+    overflow-wrap: break-word;
+  }
+  img, svg, video {
+    max-width: 100%;
   }
   a:focus-visible,
   button:focus-visible,
@@ -163,6 +175,24 @@
   animation: pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
+/* Phones: no >1 scale overshoot, which briefly pushes full-width sections past the screen edge. */
+@keyframes pop-in-mobile {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .pop-in.is-visible {
+    animation: pop-in-mobile 0.45s ease-out both;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pop-in {
     opacity: 1;
@@ -175,4 +205,20 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Unlayered on purpose so it beats Tailwind utilities: iOS Safari zooms the page
+   when a focused field is under 16px, which makes forms feel broken on phones. */
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* The Instagram embed ships a hard min-width: let it shrink on narrow phones. */
+.instagram-media {
+  min-width: 0 !important;
+  max-width: 100% !important;
 }

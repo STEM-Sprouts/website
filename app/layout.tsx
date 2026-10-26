@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 
 import "./globals.css"
 
@@ -16,6 +16,15 @@ const onest = Onest({
 })
 
 export const metadata: Metadata = baseMetadata
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+}
 
 export default function RootLayout({
   children,

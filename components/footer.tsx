@@ -54,13 +54,13 @@ export function Footer() {
                 A student-led nonprofit providing free, hands-on STEM education to elementary school students through
                 student-run chapters.
               </p>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 <a
                   href="https://www.instagram.com/stemsprouts_/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Instagram"
-                  className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="w-11 h-11 md:w-10 md:h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Instagram className="w-5 h-5 text-black" />
                 </a>
@@ -69,7 +69,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our TikTok"
-                  className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="w-11 h-11 md:w-10 md:h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <TikTokIcon className="w-5 h-5 text-black" />
                 </a>
@@ -78,7 +78,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Facebook"
-                  className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="w-11 h-11 md:w-10 md:h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Facebook className="w-5 h-5 text-black" />
                 </a>
@@ -87,7 +87,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our LinkedIn"
-                  className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="w-11 h-11 md:w-10 md:h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Linkedin className="w-5 h-5 text-black" />
                 </a>
@@ -96,7 +96,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our GitHub"
-                  className="w-10 h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="w-11 h-11 md:w-10 md:h-10 bg-[#22C55E] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Github className="w-5 h-5 text-black" />
                 </a>
@@ -105,74 +105,74 @@ export function Footer() {
 
             <div>
               <h3 className="font-bold mb-4">Pages</h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+              <ul className="grid grid-cols-2 gap-x-4 md:block md:space-y-2 text-gray-600 dark:text-gray-400 text-sm">
                 <li>
-                  <Link href="/" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/about" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/chapters" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/chapters" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Chapters
                   </Link>
                 </li>
                 <li>
-                  <Link href="/programs" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/programs" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Programs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/chapter-leadership" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/chapter-leadership" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Chapter Leadership
                   </Link>
                 </li>
                 <li>
-                  <Link href="/locations" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/locations" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Chapter Locations
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pinboard" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/pinboard" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Pinboard
                   </Link>
                 </li>
                 <li>
-                  <Link href="/policy-fellowship" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/policy-fellowship" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Policy Fellowship
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/resources" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Resources
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/guides" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="/news" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/news" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     News
                   </Link>
                 </li>
                 <li>
-                  <Link href="/partner" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/partner" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Partner With Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/legal" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/legal" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Legal &amp; Tax Status
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/privacy" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
@@ -181,9 +181,9 @@ export function Footer() {
 
             <div>
               <h3 className="font-bold mb-4">Get Involved</h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+              <ul className="md:space-y-2 text-gray-600 dark:text-gray-400 text-sm">
                 <li>
-                  <Link href="/chapter-leadership" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <Link href="/chapter-leadership" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     Explore Chapter Leadership
                   </Link>
                 </li>
@@ -192,7 +192,7 @@ export function Footer() {
                     href={CHAPTER_APPLICATION_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors"
+                    className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors"
                   >
                     Start a Chapter ↗
                   </a>
@@ -202,7 +202,7 @@ export function Footer() {
                     href="https://pinboard.stem-sprouts.org"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors"
+                    className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors"
                   >
                     Launch Pinboard ↗
                   </a>
@@ -212,7 +212,7 @@ export function Footer() {
                     href="https://github.com/STEM-Sprouts/pinboard"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors"
+                    className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors"
                   >
                     Pinboard on GitHub ↗
                   </a>
@@ -222,7 +222,7 @@ export function Footer() {
                     href={DONATE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors"
+                    className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors"
                   >
                     Donate ↗
                   </a>
@@ -235,7 +235,7 @@ export function Footer() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-400 text-sm">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:hello@stem-sprouts.org" className="inline-block py-1 hover:text-black dark:hover:text-white transition-colors">
+                  <a href="mailto:hello@stem-sprouts.org" className="inline-flex items-center min-h-11 md:min-h-0 py-1 hover:text-black dark:hover:text-white transition-colors">
                     hello@stem-sprouts.org
                   </a>
                 </li>

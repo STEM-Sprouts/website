@@ -39,7 +39,7 @@ export function GetInvolvedSection() {
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{path.description}</p>
               <Link
                 href={path.href}
-                className="mt-auto inline-flex items-center gap-2 font-bold underline text-[#15803d] dark:text-[#22C55E]"
+                className="mt-auto inline-flex items-center gap-2 min-h-11 font-bold underline text-[#15803d] dark:text-[#22C55E]"
               >
                 {path.cta}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
